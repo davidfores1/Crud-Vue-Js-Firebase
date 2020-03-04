@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <script src="js/vue.js"></script>
+  </head>
+  <body>
+    <div id="root">
+      <div class="container">
+        <div class="jumbotron">
+          <template v-for="personas in persona">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Nombre: {{personas.nombre}}</h5>
+                  <p class="card-text">Edad: {{personas.edad}}</p>
+                </div>
+              </div>
+          </template>
+        </div>
+      </div>
+    </div>
+    <script>
+      var appmy = new Vue({
+        el: "#root",
+        data:{
+          persona:[
+            { nombre: "David", edad:13 },
+            { nombre: "Edier", edad:19 },
+            { nombre: "Camila", edad:18 }
+          ]
+        }
+      });
+    </script>
+  </body>
+</html>
