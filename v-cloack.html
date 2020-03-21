@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Vue</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <script src="js/vue.js"></script>
+  </head>
+  <body>
+    <style>
+      [v-cloak] > * {display: none;}
+      [v-cloak]::before {
+        content: "";
+        display:block;
+        width: 80px;
+        height: 80px;
+        margin-bottom: 10px;
+        background-image: url("https://loading.io/mod/spinner/rolling/sample.gif");
+      }
+    </style>
+
+    <div id="app" v-cloak>
+      <h1>{{saludo}}</h1>
+    </div>
+
+      <button onclick="loadFunction()">Click</button>
+  </body>
+  
+  <script>
+    function loadFunction() {
+      var vm = new Vue({
+        el: "#app",
+        data: {
+          saludo: "Bienvenido"
+        }
+      });
+    }
+  </script>
+</html>
