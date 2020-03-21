@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    
+    <div id="app">
+        <div class="container">
+            <div class="jumbotron">
+               
+                <h1 v-once>{{saludo}}</h1>
+                <input class="form-control" type="text" v-model="saludo">
+                <h1>{{saludo}}</h1>
+                  <div v-bind:class="secondary" role="alert">
+                    This is a primary alert—check it out! <a :href="url">Documentación Alert</a>
+                  </div>
+                   <div v-html="codeHtml">
+                   
+                   </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el:"#app",
+            data:{
+                saludo:'Hola mundo',
+                primary:'alert alert-primary',
+                secondary:'alert alert-secondary',
+                url:'https://getbootstrap.com/docs/4.0/components/alerts/',
+                codeHtml:'<button type="button" class="btn btn-success">click<button>'
+            }
+        });
+
+    </script>
+</body>
+</html>

@@ -8,24 +8,36 @@
     <title>Vue</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <script src="js/vue.js"></script>
+  
 </head>
+
 <body>
+
     <div id="app">
         <div class="container">
             <div class="jumbotron">
-                <input type="text" v-model:value="edad">
-                <h1 v-show="edad > 15">Eres mayor</h1>
+                <input class="form-control" type="text" v-model="saludo">
+                <h1>{{saludo}}</h1>
+                <div v-bind:class="secondary" role="alert">
+                    This is a primary alert—check it out! <a :href="url">Documentación Alert</a>
+                  </div>
             </div>
         </div>
     </div>
+
     <script>
         var vm = new Vue({
             el:"#app",
             data:{
-                edad:19
+                saludo:'Hola mundo',
+                primary:'alert alert-primary',
+                secondary:'alert alert-secondary',
+                url:'https://getbootstrap.com/docs/4.0/components/alerts/'
             }
         });
+
     </script>
+
 </body>
 
 </html>

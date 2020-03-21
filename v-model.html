@@ -8,24 +8,30 @@
     <title>Vue</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <script src="js/vue.js"></script>
+  
 </head>
+
 <body>
+
     <div id="app">
         <div class="container">
             <div class="jumbotron">
-                <input type="text" v-model:value="edad">
-                <h1 v-show="edad > 15">Eres mayor</h1>
+                <input type="text" v-model="saludo">
+                <h1>{{saludo}}</h1>
             </div>
         </div>
     </div>
+
     <script>
         var vm = new Vue({
             el:"#app",
             data:{
-                edad:19
+                saludo:'Hola mundo'
             }
         });
+
     </script>
+
 </body>
 
 </html>
