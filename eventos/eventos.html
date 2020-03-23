@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <link rel="stylesheet" href="../css/bootstrap.min.css" />
+</head>
+<body onload="cargar()">
+    
+    <div id="event">
+    <h1>{{variable}}</h1>
+    </div>
+
+     <p><h1 id="texto" onmouseover="int()" onmouseout="out()">La pagina a cargado correctamente</h1></p>
+     <input type="text" id="entrada" onkeypress="Write()">
+<script>
+
+ function cargar(){
+    console.log("Pagina ha cargado correctamente");
+ } 
+
+ function int(){
+     document.getElementById("texto").style.color="red";
+ }
+
+ function out(){
+     document.getElementById("texto").style.color="blue";
+ }
+ function Write(){
+  
+     console.log("EScrtibe texto")
+ }
+</script>
+<script src="/js/vue.js"></script>
+<script src="/js/script.js"></script>
+
+</body>
+</html>
