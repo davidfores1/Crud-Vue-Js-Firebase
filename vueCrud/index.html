@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Vue</title>
+  <link rel="stylesheet" href="/css/bootstrap.min.css" />
+</head>
+
+<body>
+  <div id="app">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-6">
+          <form>
+            <div class="form-group">
+              <label for="clave">Clave</label>
+              <input type="text" class="form-control" id="clave" v-model="clave">
+            </div>
+            <div class="form-group">
+              <label for="titulo">Titulo</label>
+              <input type="text" class="form-control" id="titulo" v-model="titulo">
+            </div>
+            <div class="form-group">
+              <label for="descripcion">Descripción</label>
+              <input type="text" class="form-control" id="descripcion" v-model="descripcion">
+            </div>
+            <button class="btn btn-info" v-on:click.prevent="agregar(clave,titulo,descripcion)">Click</button>
+          </form>
+        </div>
+        <div class="col-6">
+           {{clave}} {{titulo}} {{descripcion}}
+           <br>
+           {{lista}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/js/vue.js"></script>
+  <script src="/js/crudVue.js"></script>
+</body>
+
+</html>
