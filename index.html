@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+<body>
+    <body>
+        <div id="app">
+          <div class="container">
+            <h3>Lista de personas a cargo</h3>
+            <div class="row pt-3">
+              <div class="col-6">
+                <form>
+                  <div class="form-group">
+                    <label for="cedula">Cedula</label>
+                    <input type="number" class="form-control" id="cedula" v-model="cedula">
+                  </div>
+                  <div class="form-group">
+                    <label for="nombre">Nombre y apellido</label>
+                    <input type="text" class="form-control" id="nombre" v-model="nombre">
+                  </div>
+                  <div class="form-group">
+                    <label for="cargo">Cargo que desempeña</label>
+                    <input type="text" class="form-control" id="cargo" v-model="cargo">
+                  </div>
+                  <button class="btn btn-info" v-on:click.prevent="agregar(cedula,nombre,cargo)"><li class="fa fa-save"></li> Guardar</button>
+                </form>
+              </div>
+      
+              <div class="col-6">
+                <br>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"> <i class="fa fa-search"></i></span>
+                  </div>
+                  <input type="text" class="form-control" v-model="txtBuscar">
+                </div>
+                 <ul class="list-group">
+                   <li v-for="item in listaFiltrada" class="list-group-item">{{item.cedula}}-{{item.nombre}} : {{item.cargo}} <button class="btn btn-danger" v-on:click.prevent="eliminar(item.cedula)"><li class="fa fa-trash"></li></button></li>
+                 </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </body>
+</body>
+<script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-database.js"></script>
+<script src="js/ini.js"></script> 
+<script src="js/vue.js"></script> 
+<script src="app.js"></script>
+</html>
